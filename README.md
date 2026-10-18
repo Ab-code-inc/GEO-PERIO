@@ -1,28 +1,26 @@
 # GEO-PERIO
 
-Data and analysis code for the GEO-PERIO integrative study of periodontitis transcriptomes.
-
-GEO-PERIO combines evaluation of published gene claims with cohort-level replication, predictive modelling, single-cell localisation, cross-disease comparisons and periodontal tissue biology.
+Data and analysis code for the GEO-PERIO integrative study of periodontitis transcriptomes. The study combines evaluation of published gene claims with independent-cohort replication, prediction, single-cell localisation, cross-disease comparisons and periodontal tissue biology.
 
 ## Data and code
 
-The [v1.0.1 release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1) supplies the starting inputs and workflows:
+The [v1.0.1 data release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1) supplies the starting inputs:
 
 | Archive | Contents |
 |---|---|
-| `01_Bulk_GEO_Inputs.zip` | Expression/count matrices from 31 bulk GEO series and original files used for format conversion |
-| `02_Primary_SingleCell_Inputs.zip` | Counts, barcodes and feature annotations for GSE164241 and GSE171213 |
-| `03_Additional_SingleCell_Inputs.zip` | Counts, barcodes and feature annotations for GSE266897, GSE272774 and GSE283882 |
-| `04_Reference_and_Study_Definitions.zip` | Sample and participant maps, cohort models, comparison definitions and reference annotations |
-| `05_Corrected_Claim_Inputs.zip` | Corrected literature-derived records and source-study identifiers used to construct the claim inventory |
-| `06_Analysis_Code.zip` | Python/R analysis scripts, software requirements, setup tools and workflow documentation |
-| `07_Figure_Code_and_Inputs.zip` | The preceding figure-code set, preserved with the analytical release |
+| 01_Bulk_GEO_Inputs.zip | Expression/count matrices from 31 bulk GEO series and original conversion inputs |
+| 02_Primary_SingleCell_Inputs.zip | Counts, barcodes and feature annotations for GSE164241 and GSE171213 |
+| 03_Additional_SingleCell_Inputs.zip | Counts, barcodes and feature annotations for GSE266897, GSE272774 and GSE283882 |
+| 04_Reference_and_Study_Definitions.zip | Sample and participant maps, cohort models, comparison definitions and reference annotations |
+| 05_Corrected_Claim_Inputs.zip | Literature-derived records and source-study identifiers used to construct the claim inventory |
 
-The molecular starting points are GEO-deposited expression/count matrices and single-cell count triplets. Cohort specifications identify the measurement scale and preparation route. File manifests record source accessions, download locations and SHA-256 hashes. Reference-data instructions identify the exact gene-set snapshot used for enrichment.
+The [v1.0.5 release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.5) supplies `Analysis_Code.zip` and `Figure_Code_and_Inputs.zip`. It contains the corrected analytical implementation and the curated figure set used by both manuscript versions.
 
-## Download
+The molecular starting points are GEO-deposited expression/count matrices and single-cell count triplets. Manifests retain source accessions, acquisition locations and SHA-256 hashes. Reference instructions identify the gene-set snapshot used for enrichment.
 
-Use Python 3.11 or newer and choose a destination path without spaces:
+## Download and run
+
+Use Python 3.11 or newer and choose a working path without spaces:
 
 ```bash
 git clone https://github.com/Ab-code-inc/GEO-PERIO.git
@@ -30,11 +28,9 @@ cd GEO-PERIO
 python3 download_reproduction.py --destination /path/to/work
 ```
 
-The downloader checks each archive and unpacks all components into `/path/to/work/GEO_PERIO_Reproducibility/`. `release-assets.json` and `SHA256SUMS` identify the files in this version. The downloader retrieves the v1.0.1 analysis snapshot. The revised figure set is supplied separately below.
+The downloader retrieves and verifies the v1.0.1 snapshot. Extract `Analysis_Code.zip` from v1.0.5 into `/path/to/work/`, replacing its analytical code with the corrected version. Both archives use the `GEO_PERIO_Reproducibility/` root. Keep the v1.0.1 input data in place.
 
-## Run the analysis
-
-From `GEO_PERIO_Reproducibility/`, follow `environment/README.md` to install or configure Python and R, and `ANALYSIS_WORKFLOW.md` for reference preparation and the ordered analysis commands:
+From `GEO_PERIO_Reproducibility/`, follow `environment/README.md` and `ANALYSIS_WORKFLOW.md`:
 
 ```bash
 bash tools/install_environment.sh
@@ -46,11 +42,11 @@ bash run_analysis.sh
 bash run_derived_analyses.sh
 ```
 
-The main workflow builds prepared matrices, cohort fits, meta-analyses, prediction results, cellular analyses and cross-disease comparisons. The derived workflow produces the final candidate classifications and partial-conjunction analyses.
+The workflows build prepared matrices, cohort fits, meta-analyses, prediction results, cellular analyses, cross-disease comparisons and candidate classifications. The v1.0.5 release note documents the clinical-summary repair: single-cohort summaries retain the finite-degree-of-freedom probabilities from the fitted limma models. The primary replication criterion and cohort effects are unchanged.
 
 ## Reproduce the figures
 
-Download `Figure_Code_and_Inputs.zip` from the [v1.0.4 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.4), extract it, and enter `Figure_Reproduction/`:
+Extract `Figure_Code_and_Inputs.zip` from v1.0.5 and enter `Figure_Reproduction/`:
 
 ```bash
 python3.12 -m venv .venv
@@ -59,11 +55,12 @@ python -m pip install -r requirements.txt
 python reproduce_all.py
 ```
 
-`FIGURE_INDEX.csv` maps the nine main and twenty supplementary figures to their code. `SOURCE_TABLE_INDEX.csv` maps the separate source tables, and `PANEL_INPUT_MAP.csv` identifies the inputs and transformations for the 40 statistical main-figure panels. Each figure folder contains its exact embedded input data and can also run independently. Figures are generated with Matplotlib. Figures 7–9 present the detailed gingival lesion and secretory machinery, clinical and cross-disease comparisons, and periodontal pathophysiology. Their standalone folders include the anatomical drawing code, embedded inputs and readable source tables.
+`FIGURE_INDEX.csv` maps seven main and twenty supplementary figures to their standalone generators. Each figure has exact embedded data, scientific Python plotting code and separate readable source tables. `SOURCE_TABLE_INDEX.csv` provides file hashes, and `PANEL_INPUT_MAP.csv` maps figures to their inputs. The anatomical illustrations are reproducible vector drawings made with Matplotlib.
 
-The [v1.0.4 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.4) accompanies **Periodontitis gene signatures retain predictive information and reveal shared inflammatory responses**. The preceding NC figures remain in [v1.0.3](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.3). The [v1.0.2 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2) remains available for **Cellular remodelling and shared inflammation in the periodontitis transcriptome**. Both use the same v1.0.1 analytical inputs and workflows.
+Main Figures 1–6 cover the six results domains; Figure 7 integrates the findings in a detailed periodontal cutaway. Supplementary Figures 13, 14 and 16 provide the lesion, molecular-function and clinical-context detail. The `primary_source_audit/` directory links biological annotations to full primary papers and records the evidence-supported corrections. Independent checks cover gene assignments, donor proportions, clinical probabilities and 192 module effects.
+
+The same curated set supports *Periodontitis gene signatures retain predictive information and reveal shared inflammatory responses* and *Cellular remodelling and shared inflammation in the periodontitis transcriptome*. Earlier releases preserve the preceding versions.
 
 ## Citation
 
-Cite the study title, the [v1.0.1 analytical data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), and the figure-code release used for that manuscript version (v1.0.2, v1.0.3 or v1.0.4). GEO accessions and source-study identifiers are retained in the input manifests.
-
+Cite the study, the [v1.0.1 starting-data release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1) and the [v1.0.5 corrected code and figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.5). GEO accessions and source-study identifiers are retained in the manifests.
