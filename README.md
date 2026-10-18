@@ -50,7 +50,7 @@ The main workflow builds prepared matrices, cohort fits, meta-analyses, predicti
 
 ## Reproduce the figures
 
-Download `Figure_Code_and_Inputs.zip` from the [v1.0.3 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.3), extract it, and enter `Figure_Reproduction/`:
+Download `Figure_Code_and_Inputs.zip` from the [v1.0.4 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.4), extract it, and enter `Figure_Reproduction/`:
 
 ```bash
 python3.12 -m venv .venv
@@ -59,11 +59,11 @@ python -m pip install -r requirements.txt
 python reproduce_all.py
 ```
 
-`FIGURE_INDEX.csv` maps the seven main and twenty supplementary figures to their code. `SOURCE_TABLE_INDEX.csv` maps the separate source tables, and `PANEL_INPUT_MAP.csv` identifies the inputs and transformations for the 40 statistical main-figure panels. Each figure folder contains its exact embedded input data and can also run independently. Figures are generated with Matplotlib.
+`FIGURE_INDEX.csv` maps the nine main and twenty supplementary figures to their code. `SOURCE_TABLE_INDEX.csv` maps the separate source tables, and `PANEL_INPUT_MAP.csv` identifies the inputs and transformations for the 40 statistical main-figure panels. Each figure folder contains its exact embedded input data and can also run independently. Figures are generated with Matplotlib. Figures 7–9 present the detailed gingival lesion and secretory machinery, clinical and cross-disease comparisons, and periodontal pathophysiology. Their standalone folders include the anatomical drawing code, embedded inputs and readable source tables.
 
-The [v1.0.3 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.3) accompanies **Periodontitis gene signatures retain predictive information and reveal shared inflammatory responses**. The [v1.0.2 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2) remains available for **Cellular remodelling and shared inflammation in the periodontitis transcriptome**. Both use the same v1.0.1 analytical inputs and workflows.
+The [v1.0.4 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.4) accompanies **Periodontitis gene signatures retain predictive information and reveal shared inflammatory responses**. The preceding NC figures remain in [v1.0.3](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.3). The [v1.0.2 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2) remains available for **Cellular remodelling and shared inflammation in the periodontitis transcriptome**. Both use the same v1.0.1 analytical inputs and workflows.
 
 ## Citation
 
-Cite the study title, the [v1.0.1 analytical data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), and the figure-code release used for that manuscript version (v1.0.2 or v1.0.3). GEO accessions and source-study identifiers are retained in the input manifests.
+Cite the study title, the [v1.0.1 analytical data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), and the figure-code release used for that manuscript version (v1.0.2, v1.0.3 or v1.0.4). GEO accessions and source-study identifiers are retained in the input manifests.
 
