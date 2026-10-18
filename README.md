@@ -14,7 +14,7 @@ The [v1.0.1 data release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/
 | 04_Reference_and_Study_Definitions.zip | Sample and participant maps, cohort models, comparison definitions and reference annotations |
 | 05_Corrected_Claim_Inputs.zip | Literature-derived records and source-study identifiers used to construct the claim inventory |
 
-The [v1.0.5 release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.5) supplies `Analysis_Code.zip` and `Figure_Code_and_Inputs.zip`. It contains the corrected analytical implementation and the curated figure set used by both manuscript versions.
+The [v1.0.5 analysis release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.5) supplies the corrected `Analysis_Code.zip`. The [v1.0.6 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.6) supplies `Figure_Code_and_Inputs.zip`, including the updated study chronology wording used by both manuscript versions.
 
 The molecular starting points are GEO-deposited expression/count matrices and single-cell count triplets. Manifests retain source accessions, acquisition locations and SHA-256 hashes. Reference instructions identify the gene-set snapshot used for enrichment.
 
@@ -46,7 +46,7 @@ The workflows build prepared matrices, cohort fits, meta-analyses, prediction re
 
 ## Reproduce the figures
 
-Extract `Figure_Code_and_Inputs.zip` from v1.0.5 and enter `Figure_Reproduction/`:
+Extract `Figure_Code_and_Inputs.zip` from v1.0.6 and enter `Figure_Reproduction/`:
 
 ```bash
 python3.12 -m venv .venv
@@ -63,4 +63,4 @@ The same curated set supports *Periodontitis gene signatures retain predictive i
 
 ## Citation
 
-Cite the study, the [v1.0.1 starting-data release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1) and the [v1.0.5 corrected code and figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.5). GEO accessions and source-study identifiers are retained in the manifests.
+Cite the study, the [v1.0.1 starting-data release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), the [v1.0.5 corrected analysis release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.5) and the [v1.0.6 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.6). GEO accessions and source-study identifiers are retained in the manifests.
