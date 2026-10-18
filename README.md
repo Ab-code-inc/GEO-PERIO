@@ -1,6 +1,6 @@
 # GEO-PERIO
 
-Data and analysis code for **Integrative analysis of periodontitis transcriptomes reveals shared tissue responses and limits of gene-level replication**.
+Data and analysis code for **Cellular remodelling and shared inflammation in the periodontitis transcriptome**.
 
 GEO-PERIO combines evaluation of published gene claims with cohort-level replication, predictive modelling, single-cell localisation, cross-disease comparisons and periodontal tissue biology.
 
@@ -16,7 +16,7 @@ The [v1.0.1 release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.
 | `04_Reference_and_Study_Definitions.zip` | Sample and participant maps, cohort models, comparison definitions and reference annotations |
 | `05_Corrected_Claim_Inputs.zip` | Corrected literature-derived records and source-study identifiers used to construct the claim inventory |
 | `06_Analysis_Code.zip` | Python/R analysis scripts, software requirements, setup tools and workflow documentation |
-| `07_Figure_Code_and_Inputs.zip` | Code for all 27 figures, exact embedded inputs and separate figure source tables |
+| `07_Figure_Code_and_Inputs.zip` | The preceding figure-code set, preserved with the analytical release |
 
 The molecular starting points are GEO-deposited expression/count matrices and single-cell count triplets. Cohort specifications identify the measurement scale and preparation route. File manifests record source accessions, download locations and SHA-256 hashes. Reference-data instructions identify the exact gene-set snapshot used for enrichment.
 
@@ -30,7 +30,7 @@ cd GEO-PERIO
 python3 download_reproduction.py --destination /path/to/work
 ```
 
-The downloader checks each archive and unpacks all components into `/path/to/work/GEO_PERIO_Reproducibility/`. `release-assets.json` and `SHA256SUMS` identify the files in this version. For figure reproduction alone, add `--figures-only`.
+The downloader checks each archive and unpacks all components into `/path/to/work/GEO_PERIO_Reproducibility/`. `release-assets.json` and `SHA256SUMS` identify the files in this version. The downloader retrieves the v1.0.1 analysis snapshot. The revised figure set is supplied separately below.
 
 ## Run the analysis
 
@@ -50,7 +50,7 @@ The main workflow builds prepared matrices, cohort fits, meta-analyses, predicti
 
 ## Reproduce the figures
 
-From `GEO_PERIO_Reproducibility/figures/figure_reproduction/`:
+Download `Figure_Code_and_Inputs.zip` from the [v1.0.2 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2), extract it, and enter `Figure_Reproduction/`:
 
 ```bash
 python3.12 -m venv .venv
@@ -59,8 +59,9 @@ python -m pip install -r requirements.txt
 python reproduce_all.py
 ```
 
-`FIGURE_INDEX.csv` maps the seven main and twenty supplementary figures to their code. `SOURCE_TABLE_INDEX.csv` maps the figure source tables. Figures are generated with Matplotlib.
+`FIGURE_INDEX.csv` maps the seven main and twenty supplementary figures to their code. `SOURCE_TABLE_INDEX.csv` maps the separate source tables, and `PANEL_INPUT_MAP.csv` identifies the inputs and transformations for the 40 statistical main-figure panels. Each figure folder contains its exact embedded input data and can also run independently. Figures are generated with Matplotlib.
 
 ## Citation
 
-Cite the study title and this [versioned data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1). GEO accessions and source-study identifiers are retained in the input manifests.
+Cite the study title, the [v1.0.1 analytical data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), and the [v1.0.2 figure-code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2). GEO accessions and source-study identifiers are retained in the input manifests.
+
