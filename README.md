@@ -1,6 +1,6 @@
 # GEO-PERIO
 
-Data and analysis code for **Cellular remodelling and shared inflammation in the periodontitis transcriptome**.
+Data and analysis code for the GEO-PERIO integrative study of periodontitis transcriptomes.
 
 GEO-PERIO combines evaluation of published gene claims with cohort-level replication, predictive modelling, single-cell localisation, cross-disease comparisons and periodontal tissue biology.
 
@@ -50,7 +50,7 @@ The main workflow builds prepared matrices, cohort fits, meta-analyses, predicti
 
 ## Reproduce the figures
 
-Download `Figure_Code_and_Inputs.zip` from the [v1.0.2 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2), extract it, and enter `Figure_Reproduction/`:
+Download `Figure_Code_and_Inputs.zip` from the [v1.0.3 figure release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.3), extract it, and enter `Figure_Reproduction/`:
 
 ```bash
 python3.12 -m venv .venv
@@ -61,7 +61,9 @@ python reproduce_all.py
 
 `FIGURE_INDEX.csv` maps the seven main and twenty supplementary figures to their code. `SOURCE_TABLE_INDEX.csv` maps the separate source tables, and `PANEL_INPUT_MAP.csv` identifies the inputs and transformations for the 40 statistical main-figure panels. Each figure folder contains its exact embedded input data and can also run independently. Figures are generated with Matplotlib.
 
+The [v1.0.3 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.3) accompanies **Periodontitis gene signatures retain predictive information and reveal shared inflammatory responses**. The [v1.0.2 figure set](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2) remains available for **Cellular remodelling and shared inflammation in the periodontitis transcriptome**. Both use the same v1.0.1 analytical inputs and workflows.
+
 ## Citation
 
-Cite the study title, the [v1.0.1 analytical data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), and the [v1.0.2 figure-code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.2). GEO accessions and source-study identifiers are retained in the input manifests.
+Cite the study title, the [v1.0.1 analytical data/code release](https://github.com/Ab-code-inc/GEO-PERIO/releases/tag/v1.0.1), and the figure-code release used for that manuscript version (v1.0.2 or v1.0.3). GEO accessions and source-study identifiers are retained in the input manifests.
 
